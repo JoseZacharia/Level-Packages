@@ -13,7 +13,7 @@ public class PlayerMovt_1 : MonoBehaviour
     public bool faceleft = false;
     public Transform groundlimit, groundCheck, winPoint;
     public static bool hasKey = false;
-
+    public GameObject pauseMenu;
     
     //private playerLoseLife player;
     // Start is called before the first frame update
@@ -21,12 +21,20 @@ public class PlayerMovt_1 : MonoBehaviour
     {
         //normal speed gameplay
         Time.timeScale = 1;
+        PlayerPrefs.SetString("Current Level", "Level 1");
     }
 
     // Update is called once per frame
     void Update()
     {
         //get amount of horizontal input
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0;
+            pauseMenu.SetActive(true);
+        }
+
         horizontalinput = Input.GetAxis("Horizontal");
         // get jump input
         if ((Input.GetKeyDown(KeyCode.W)) || (Input.GetKeyDown(KeyCode.UpArrow)))
@@ -68,6 +76,8 @@ public class PlayerMovt_1 : MonoBehaviour
             
 
         }
+
+
 
     }
 
