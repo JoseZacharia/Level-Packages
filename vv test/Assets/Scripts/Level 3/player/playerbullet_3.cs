@@ -6,7 +6,7 @@ public class playerbullet_3 : MonoBehaviour
 {
 
 	public float speed = 20f;
-	public int damage = 40;
+	public int damage = 4;
 	Rigidbody2D rb;
 	public GameObject impactEffect;
 	private float timeElapsed;
@@ -33,7 +33,7 @@ public class playerbullet_3 : MonoBehaviour
 		if (hitInfo.gameObject.tag == "Enemy")
 		{
 			Destroy(gameObject);
-			Destroy(hitInfo.gameObject);
+			//Destroy(hitInfo.gameObject);
 		}
 
 
