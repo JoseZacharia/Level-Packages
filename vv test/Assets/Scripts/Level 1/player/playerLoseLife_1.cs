@@ -14,12 +14,13 @@ public class playerLoseLife_1 : MonoBehaviour
     float initx, inity;
     public TextMeshProUGUI livesCounter;
 
+    public Vector3 respawnPoint;
+
     void Start()
     {
         playerLives = Lives;
         livesCounter.text = "Lives: " + playerLives.ToString();
-        initx = transform.position.x;
-        inity = transform.position.y;
+        respawnPoint = transform.position;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -30,11 +31,15 @@ public class playerLoseLife_1 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Heart")
+        if (collision.tag == "Heart")
         {
             playerLives++;
             livesCounter.text = "Lives: " + playerLives.ToString();
             Destroy(collision.gameObject);
+        }
+        if(collision.tag == "Checkpoint")
+        {
+            respawnPoint = collision.transform.position;
         }
     }
 
@@ -56,7 +61,7 @@ public class playerLoseLife_1 : MonoBehaviour
         {
             //print("restart");
             //SceneManager.LoadScene("Level");
-            transform.position=new Vector2(initx,inity);
+            transform.position = respawnPoint;
 
         }
         livesCounter.text = "Lives: " + playerLives.ToString();
