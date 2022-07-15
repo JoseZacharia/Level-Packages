@@ -5,7 +5,6 @@ using UnityEngine;
 public class bossHealth_3 : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject enemySpawnManager;
 
     public int maxBossHealth;
 
