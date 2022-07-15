@@ -107,7 +107,7 @@ public class PlayerMovt_1 : MonoBehaviour
 
         if(collision.tag == "Ammo")
         {
-            print("Ammo");
+            //print("Ammo");
             Destroy(collision.gameObject);
             weapon.GetComponent<weapon_1>().collectAmmo();
             
