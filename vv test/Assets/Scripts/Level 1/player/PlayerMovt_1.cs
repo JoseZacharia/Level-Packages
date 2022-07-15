@@ -14,6 +14,8 @@ public class PlayerMovt_1 : MonoBehaviour
     public Transform groundlimit, groundCheck, winPoint;
     public static bool hasKey = false;
     public GameObject pauseMenu;
+
+    public GameObject weapon;
     
     //private playerLoseLife player;
     // Start is called before the first frame update
@@ -103,7 +105,13 @@ public class PlayerMovt_1 : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-
+        if(collision.tag == "Ammo")
+        {
+            print("Ammo");
+            Destroy(collision.gameObject);
+            weapon.GetComponent<weapon_1>().collectAmmo();
+            
+        }
 
 
     }

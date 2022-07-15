@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class weapon_1 : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class weapon_1 : MonoBehaviour
 	public float bulletSpeed;
 	public float range;
 
+	public int maxAmmo, ammoLeft;
+	public int ammoReload;
+	public TextMeshProUGUI ammoCounter;
+
 	Vector2 direction;
 
 	//private bool shooting;
@@ -18,8 +23,10 @@ public class weapon_1 : MonoBehaviour
 
     private void Start()
     {
+		ammoLeft = maxAmmo;
+		displayAmmo();
 		//shooting = false;
-    }
+	}
     // Update is called once per frame
     void Update()
 	{
@@ -32,7 +39,8 @@ public class weapon_1 : MonoBehaviour
 			if(Time.time > readyForNextShot)
             {
 				readyForNextShot = Time.time + 1/fireRate;
-				Shoot();
+				if(ammoLeft>0)
+					Shoot();
 			}
 			
 		}
@@ -49,9 +57,22 @@ public class weapon_1 : MonoBehaviour
 		GameObject bulletInstance = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 		bulletInstance.GetComponent<Rigidbody2D>().AddForce(bulletInstance.transform.right * (bulletSpeed * 10));
 		bulletInstance.GetComponent<bullet_1>().setRange(range);
-
-
+		ammoLeft--;
+		displayAmmo();
 	}
 
+    public void collectAmmo()
+    {
+		ammoLeft += ammoReload;
+		if(ammoLeft>maxAmmo)
+        {
+			ammoLeft = maxAmmo;
+        }
+		displayAmmo();
+    }
 
+	void displayAmmo()
+    {
+		ammoCounter.text = ammoLeft.ToString() + "/" + maxAmmo.ToString();
+	}
 }

@@ -12,6 +12,7 @@ TagManager:
   - Ground
   - Jump Platform
   - Checkpoint
+  - Ammo
   layers:
   - Default
   - TransparentFX
