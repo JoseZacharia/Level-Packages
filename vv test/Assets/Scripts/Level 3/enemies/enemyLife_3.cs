@@ -5,9 +5,8 @@ using UnityEngine;
 public class enemyLife_3 : MonoBehaviour
 {
     // Start is called before the first frame update
-    private GameObject enemySpawnManager;
-    enemySpawn_3 enemySpawn;
-    enemyMovement_3 enemyMovt;
+    public float topLimit;
+
     void Start()
     {
         //;
@@ -22,7 +21,7 @@ public class enemyLife_3 : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (GetComponent<enemyMovement_3>().stationed == true && collision.gameObject.tag == "Bullet")
+        if (transform.position.y < topLimit && collision.gameObject.tag == "Bullet")
         { 
             GameObject.Find("Spawn Manager").GetComponent<enemySpawn_3>().reduceEnemies();
             Destroy(gameObject);

@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class level1restart_1 : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+
+    }
     public void restartlevel()
     {
         //restart level by reloading scene

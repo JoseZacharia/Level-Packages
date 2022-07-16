@@ -8,7 +8,7 @@ public class gameplayManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Time.timeScale = 1;
+        
     }
 
     // Update is called once per frame
@@ -19,6 +19,7 @@ public class gameplayManager : MonoBehaviour
 
     public void restartLevel3()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Level 3");
     }
 }
