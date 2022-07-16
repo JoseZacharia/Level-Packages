@@ -11,16 +11,14 @@ public class playerHealth_3 : MonoBehaviour
     [SerializeField] static int Health = 100;
     public int maxHealth;
     public int heartIncrement;
+    public GameObject gameOverScreen;
    // public GameObject gameoverscreen;
-    float initx, inity;
     public TextMeshProUGUI maxHealthCounter;
 
     void Start()
     {
         Health = maxHealth;
         updateHealthText();
-        initx = transform.position.x;
-        inity = transform.position.y;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -51,10 +49,10 @@ public class playerHealth_3 : MonoBehaviour
         if (Health <= 0)
         {
             //print("gameover");
-
-            //Time.timeScale = 0; //stop gameplay
-            //gameoverscreen.SetActive(true);// show game over screen
-            Health = 100;
+            Health = 0;
+            Time.timeScale = 0; //stop gameplay
+            gameOverScreen.SetActive(true);// show game over screen
+           //Health = 100;
         }
         else if (Health > 0)
         {
@@ -73,6 +71,6 @@ public class playerHealth_3 : MonoBehaviour
         maxHealthCounter.text = Health.ToString();
     }
 
-
+   
 
 }

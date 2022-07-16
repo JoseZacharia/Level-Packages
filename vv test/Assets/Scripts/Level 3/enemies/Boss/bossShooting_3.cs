@@ -5,11 +5,14 @@ using UnityEngine;
 public class bossShooting_3 : MonoBehaviour
 {
 
-	public Transform[] firePointList;
-	public GameObject bulletPrefab;
-	[SerializeField] float fireRate;
-	float readyForNextShot;
+	public Transform[] firePointMinor;
+	public Transform firePointMain;
+	public GameObject bulletMainPrefab, bulletMinorPrefab;
+	float readyForNextShotMain;
+	[SerializeField] float fireRateMain;
+	float readyForNextShotMinor;
 
+	float fireRateMinor;
 	private float elapsed;
 	private bool stationed;
 
@@ -18,6 +21,7 @@ public class bossShooting_3 : MonoBehaviour
 
 	private void Start()
 	{
+		fireRateMinor = fireRateMain / 2;
 		stationed = GetComponent<bossMovement_3>().stationed;
 
 	}
@@ -33,25 +37,35 @@ public class bossShooting_3 : MonoBehaviour
 		stationed = GetComponent<bossMovement_3>().stationed;
 		if (stationed == true)
 		{
-			if (Time.time > readyForNextShot)
+			if (Time.time > readyForNextShotMain)
 			{
-				readyForNextShot = Time.time + 1 / fireRate;
-				Shoot();
+				readyForNextShotMain = Time.time + 1 / fireRateMain;
+				ShootMain();
 			}
+			if (Time.time > readyForNextShotMinor)
+			{
+				readyForNextShotMinor = Time.time + 1 / fireRateMinor;
+				shootMinor();
+			}
+
 		}
 
 
 	}
 
-	void Shoot()
+	void ShootMain()
 	{
-		foreach (Transform firePoint in firePointList)
-        {
-			Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+		Instantiate(bulletMainPrefab, firePointMain.position, firePointMain.rotation);
+		
+		
+	}
+
+	void shootMinor()
+    {
+		foreach (Transform firePoint in firePointMinor)
+		{
+			GameObject bulletInstance = Instantiate(bulletMinorPrefab, firePoint.position, firePoint.rotation);
+			//bulletInstance.GetComponent<Bullet_3>().moveSpeed /= 2f;
 		}
-
-
-		
-		
 	}
 }

@@ -7,7 +7,8 @@ public class bossHealth_3 : MonoBehaviour
     // Start is called before the first frame update
 
     public int maxBossHealth;
-    public GameObject bossHealthCounterObject;
+    public GameObject bossHealthCounterObject, winScreen;
+
 
     private int currentBossHealth;
     private TextMeshProUGUI bossHealthCounter;
@@ -24,12 +25,17 @@ public class bossHealth_3 : MonoBehaviour
     void Update()
     {
         if (currentBossHealth <= 0)
+        {
             Destroy(gameObject);
+            Time.timeScale = 0;
+            winScreen.SetActive(true);
+        }
+            
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Bullet")
+        if (GetComponent<bossMovement_3>().stationed == true && collision.gameObject.tag == "Bullet")
         {
 
             currentBossHealth--;

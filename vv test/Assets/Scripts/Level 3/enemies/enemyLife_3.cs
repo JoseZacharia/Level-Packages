@@ -5,10 +5,12 @@ using UnityEngine;
 public class enemyLife_3 : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject enemySpawnManager;
+    private GameObject enemySpawnManager;
+    enemySpawn_3 enemySpawn;
+    enemyMovement_3 enemyMovt;
     void Start()
     {
-        
+        //;
     }
 
     // Update is called once per frame
@@ -19,9 +21,9 @@ public class enemyLife_3 : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Bullet")
-        {
 
+        if (GetComponent<enemyMovement_3>().stationed == true && collision.gameObject.tag == "Bullet")
+        { 
             GameObject.Find("Spawn Manager").GetComponent<enemySpawn_3>().reduceEnemies();
             Destroy(gameObject);
         }

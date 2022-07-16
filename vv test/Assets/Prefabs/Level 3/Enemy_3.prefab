@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 139115979}
   - component: {fileID: 139115980}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: redfighter0007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 1731569080505453612}
   - component: {fileID: 8312483607821216452}
   - component: {fileID: 2024482093}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy_3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -261,7 +261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d1e12249f584e4a946bdb9cedf97ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawnManager: {fileID: 0}
 --- !u!114 &2024482093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,7 +286,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1731569082385822619}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Fire Point enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

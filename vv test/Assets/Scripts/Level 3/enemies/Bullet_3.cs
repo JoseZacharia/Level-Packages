@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet_3 : MonoBehaviour
 {
 
-	float moveSpeed = 7f;
+	public float moveSpeed = 7f;
 	public int bulletTimeout;
 
 	Rigidbody2D rb;
@@ -25,7 +25,8 @@ public class Bullet_3 : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D col)
 	{
-		Destroy(gameObject);
+		if(col.gameObject.tag == "Player" || col.gameObject.tag == "Bullet")
+			Destroy(gameObject);
 	}
 
 }
