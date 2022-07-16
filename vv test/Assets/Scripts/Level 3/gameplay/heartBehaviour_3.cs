@@ -10,7 +10,7 @@ public class heartBehaviour_3 : MonoBehaviour
     void Start()
     {
         sceneBottomLimit = GameObject.Find("Bottom Limit").transform;
-        print(sceneBottomLimit);
+        //print(sceneBottomLimit);
     }
 
     // Update is called once per frame

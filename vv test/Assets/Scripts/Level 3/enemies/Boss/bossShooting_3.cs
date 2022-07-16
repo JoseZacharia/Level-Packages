@@ -5,7 +5,7 @@ using UnityEngine;
 public class bossShooting_3 : MonoBehaviour
 {
 
-	public Transform firePoint;
+	public Transform[] firePointList;
 	public GameObject bulletPrefab;
 	[SerializeField] float fireRate;
 	float readyForNextShot;
@@ -19,6 +19,7 @@ public class bossShooting_3 : MonoBehaviour
 	private void Start()
 	{
 		stationed = GetComponent<bossMovement_3>().stationed;
+
 	}
 	void Update()
 	{
@@ -44,6 +45,13 @@ public class bossShooting_3 : MonoBehaviour
 
 	void Shoot()
 	{
-		Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+		foreach (Transform firePoint in firePointList)
+        {
+			Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+		}
+
+
+		
+		
 	}
 }

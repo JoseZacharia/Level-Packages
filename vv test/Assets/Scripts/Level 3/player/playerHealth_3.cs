@@ -18,7 +18,7 @@ public class playerHealth_3 : MonoBehaviour
     void Start()
     {
         Health = maxHealth;
-        maxHealthCounter.text = "Health: " + Health.ToString();
+        updateHealthText();
         initx = transform.position.x;
         inity = transform.position.y;
     }
@@ -70,7 +70,7 @@ public class playerHealth_3 : MonoBehaviour
 
     void updateHealthText()
     {
-        maxHealthCounter.text = "Health: " + Health.ToString();
+        maxHealthCounter.text = Health.ToString();
     }
 
 

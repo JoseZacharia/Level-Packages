@@ -19,7 +19,7 @@ public class playerLoseLife_1 : MonoBehaviour
     void Start()
     {
         playerLives = Lives;
-        livesCounter.text = "Lives: " + playerLives.ToString();
+        displayLives();
         respawnPoint = transform.position;
     }
 
@@ -34,7 +34,7 @@ public class playerLoseLife_1 : MonoBehaviour
         if (collision.tag == "Heart")
         {
             playerLives++;
-            livesCounter.text = "Lives: " + playerLives.ToString();
+            displayLives();
             Destroy(collision.gameObject);
         }
         if(collision.tag == "Checkpoint")
@@ -64,10 +64,14 @@ public class playerLoseLife_1 : MonoBehaviour
             transform.position = respawnPoint;
 
         }
-        livesCounter.text = "Lives: " + playerLives.ToString();
+        displayLives();
 
 
     }
 
+    public void displayLives()
+    {
+        livesCounter.text = playerLives.ToString();
+    }
 
 }

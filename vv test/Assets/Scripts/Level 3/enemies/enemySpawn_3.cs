@@ -54,7 +54,7 @@ public class enemySpawn_3 : MonoBehaviour
             {
                 readyForNextDifficultyIncrease = Time.time + difficultyIncreaseInterval;
                 spawnRate += 0.5f;
-                print(spawnRate);
+                //print(spawnRate);
             }
         }
 
@@ -66,7 +66,7 @@ public class enemySpawn_3 : MonoBehaviour
                 spawnTime = Time.time + 1 / spawnRate;
                 currentNoOfEnemies++;
                 enemiesKilled++;
-                print(enemiesKilled);
+               // print(enemiesKilled);
                 if (enemiesKilled >= totalEnemies)
                 {
                     spawnRate = 0;

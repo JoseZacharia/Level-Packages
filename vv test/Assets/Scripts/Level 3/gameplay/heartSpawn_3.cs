@@ -28,7 +28,7 @@ public class heartSpawn_3 : MonoBehaviour
     }
     void Spawn()
     {
-        print("spawn heart");
+       // print("spawn heart");
         float randomX = Random.Range(left.position.x, right.position.x);
         float randomY = Random.Range(bottom.position.y, top.position.y);
         Instantiate(heartPrefab, new Vector3(randomX, randomY, 0), transform.rotation);
