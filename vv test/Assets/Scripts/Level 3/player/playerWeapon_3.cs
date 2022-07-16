@@ -23,14 +23,10 @@ public class playerWeapon_3 : MonoBehaviour
 	void Update()
 	{
 
-		if (Input.GetButton("Fire1"))
+		if (Time.time > readyForNextShot)
 		{
-			if (Time.time > readyForNextShot)
-			{
-				readyForNextShot = Time.time + 1 / fireRate;
-				Shoot();
-			}
-
+			readyForNextShot = Time.time + 1 / fireRate;
+			Shoot();
 		}
 
 	}
