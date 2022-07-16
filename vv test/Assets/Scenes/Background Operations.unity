@@ -611,7 +611,7 @@ GameObject:
   - component: {fileID: 1217471221}
   - component: {fileID: 1217471220}
   m_Layer: 0
-  m_Name: Level Manager Script
+  m_Name: BTS Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -748,14 +748,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1217471220}
-    - target: {fileID: 7558827661405935011, guid: dbf234802d820954094a0229ebbbdab2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: resumeGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 7558827661405935011, guid: dbf234802d820954094a0229ebbbdab2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: levelManager, Assembly-CSharp
-      objectReference: {fileID: 0}
+    - target: {fileID: 7558827662243876085, guid: dbf234802d820954094a0229ebbbdab2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1217471220}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbf234802d820954094a0229ebbbdab2, type: 3}
 --- !u!1 &1535266672

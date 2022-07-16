@@ -245,7 +245,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Restart
+  m_text: Proceed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -349,7 +349,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000019073, y: -1.811}
+  m_AnchoredPosition: {x: 0.0000019073, y: 19.8}
   m_SizeDelta: {x: 231.219, y: 26.841}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3885165271313209378
@@ -462,7 +462,7 @@ GameObject:
   - component: {fileID: 3885165272056560699}
   - component: {fileID: 3885165272056560696}
   m_Layer: 5
-  m_Name: Restart
+  m_Name: Proceed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -486,7 +486,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000011444, y: -39.1}
+  m_AnchoredPosition: {x: -0.000011444, y: -23.2}
   m_SizeDelta: {x: 139.9741, y: 18.809}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3885165272056560698
@@ -572,8 +572,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: level1restart, Assembly-CSharp
-        m_MethodName: restartlevel
+        m_TargetAssemblyTypeName: gameplayManager, Assembly-CSharp
+        m_MethodName: restartLevel3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

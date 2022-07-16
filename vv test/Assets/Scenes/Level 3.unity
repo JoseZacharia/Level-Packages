@@ -2449,14 +2449,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1013284589}
-    - target: {fileID: 3885165272056560696, guid: a47574e75afe6b642afce0c373f9e9df, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: restartLevel3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3885165272056560696, guid: a47574e75afe6b642afce0c373f9e9df, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: gameplayManager, Assembly-CSharp
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a47574e75afe6b642afce0c373f9e9df, type: 3}
 --- !u!1 &1649368743

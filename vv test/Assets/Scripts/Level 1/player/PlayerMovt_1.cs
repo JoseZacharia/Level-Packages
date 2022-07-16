@@ -31,11 +31,11 @@ public class PlayerMovt_1 : MonoBehaviour
     {
         //get amount of horizontal input
 
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            Time.timeScale = 0;
-            pauseMenu.SetActive(true);
-        }
+        //if(Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    Time.timeScale = 0;
+        //    pauseMenu.SetActive(true);
+        //}
 
         horizontalinput = Input.GetAxis("Horizontal");
         // get jump input

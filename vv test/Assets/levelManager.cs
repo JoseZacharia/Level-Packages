@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class levelManager : MonoBehaviour
 {
@@ -26,5 +27,10 @@ public class levelManager : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void quitLevel()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 }
