@@ -6,9 +6,10 @@ using UnityEngine.UI;
 using TMPro;
 
 public class GameOver4 : MonoBehaviour
-{   public GameObject gameOverPanel;
-[SerializeField] TextMeshProUGUI countdowntext2;
-public float timeLeft2;
+{  
+    public GameObject gameOverPanel;
+    [SerializeField] TextMeshProUGUI countdowntext2;
+    private float timeLeft2;
 
 
 
@@ -16,21 +17,17 @@ public float timeLeft2;
 // Update is called once per frame
 void Update()
 {
-if(GameObject.FindGameObjectWithTag("Player") == null)
-{
-gameOverPanel.SetActive(true);
-    timeLeft2 = 0;
-    countdowntext2.text = ("Time Left : " + (timeLeft2).ToString("0.0"));
+    if(GameObject.FindGameObjectWithTag("Player") == null)
+    {
+        gameOverPanel.SetActive(true);
+            timeLeft2 = 0;
+            countdowntext2.text = ("Time Left : " + (timeLeft2).ToString("0.0"));
 
-}
+    }
 
     
 
 
 }
-public void Restart()
-{
-SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
-}
 }

@@ -1135,8 +1135,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1248466455}
-        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+      - m_Target: {fileID: 1248466457}
+        m_TargetAssemblyTypeName: gameplayManager_4, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -1890,8 +1890,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1248466454}
   - component: {fileID: 1248466453}
-  - component: {fileID: 1248466455}
   - component: {fileID: 1248466456}
+  - component: {fileID: 1248466457}
+  - component: {fileID: 1248466458}
   m_Layer: 0
   m_Name: ' Game Manager'
   m_TagString: Untagged
@@ -1933,21 +1934,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1248466455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1248466452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42b4109bb8319544cad49b0e37dffe8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOverPanel: {fileID: 1131174293}
-  countdowntext2: {fileID: 416481053}
-  timeLeft2: 0
 --- !u!114 &1248466456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1963,6 +1949,32 @@ MonoBehaviour:
   GameFullOverPanel: {fileID: 42184099}
   timeLeft: 30
   countdowntext: {fileID: 416481053}
+--- !u!114 &1248466457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248466452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69b27b2302d049d47b163710505a3db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1248466458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248466452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b4109bb8319544cad49b0e37dffe8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 1131174293}
+  countdowntext2: {fileID: 416481053}
 --- !u!1 &1546927900
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Border
+  - Heart
+  - Trap
+  - Ground
+  - Enemy
+  - Jump Platform
+  - Bullet
+  - Checkpoint
+  - Ammo
+  - Key
   layers:
   - Default
   - TransparentFX
@@ -38,6 +48,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2772664573
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
