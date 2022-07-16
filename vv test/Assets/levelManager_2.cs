@@ -10,6 +10,8 @@ public class levelManager_2 : MonoBehaviour
     private void Awake()
     {
         SceneManager.LoadScene("Background Operations", LoadSceneMode.Additive);
+        Time.timeScale = 1;
+        PlayerPrefs.SetString("Current Level", "Level 2");
     }
     void Start()
     {
@@ -23,6 +25,11 @@ public class levelManager_2 : MonoBehaviour
     }
 
     public void restart()
+    {
+        SceneManager.LoadScene("Level 2");
+    }
+
+    public void proceed()
     {
         SceneManager.LoadScene("Level 3");
     }

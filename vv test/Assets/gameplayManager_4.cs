@@ -9,6 +9,8 @@ public class gameplayManager_4 : MonoBehaviour
     private void Awake()
     {
         SceneManager.LoadScene("Background Operations", LoadSceneMode.Additive);
+        Time.timeScale = 1;
+        PlayerPrefs.SetString("Current Level", "Level 4");
     }
     // Start is called before the first frame update
     void Start()

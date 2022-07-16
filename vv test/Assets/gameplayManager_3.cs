@@ -9,6 +9,8 @@ public class gameplayManager_3 : MonoBehaviour
     void Awake()
     {
         SceneManager.LoadScene("Background Operations", LoadSceneMode.Additive);
+        Time.timeScale = 1;
+        PlayerPrefs.SetString("Current Level", "Level 3");
     }
 
     // Update is called once per frame

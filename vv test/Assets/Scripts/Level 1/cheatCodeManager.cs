@@ -62,7 +62,7 @@ public class cheatCodeManager : MonoBehaviour
 
     public void progress()
     {
-       // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void exit()
     {

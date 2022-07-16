@@ -10,6 +10,8 @@ public class levelManager_1 : MonoBehaviour
     private void Awake()
     {
         SceneManager.LoadScene("Background Operations", LoadSceneMode.Additive);
+        Time.timeScale = 1;
+        PlayerPrefs.SetString("Current Level", "Level 1");
     }
     public void restartLevel()
     {

@@ -15,7 +15,7 @@ public class CameraMovt_1 : MonoBehaviour
     void Start()
     {
         //to store distance between camera and player as specified in the Editor  
-        offset = transform.position - player.transform.position;
+        //offset = transform.position - player.transform.position;
     }
 
     private void Update()

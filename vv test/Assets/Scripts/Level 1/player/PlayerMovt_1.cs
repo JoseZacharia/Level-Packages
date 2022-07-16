@@ -22,8 +22,7 @@ public class PlayerMovt_1 : MonoBehaviour
     void Start()
     {
         //normal speed gameplay
-        Time.timeScale = 1;
-        PlayerPrefs.SetString("Current Level", "Level 1");
+
     }
 
     // Update is called once per frame
