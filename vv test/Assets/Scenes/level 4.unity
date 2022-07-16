@@ -2728,7 +2728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameFullOverPanel: {fileID: 42184099}
-  maxTimeLeft: 30
+  maxTimeLeft: 20
   timerSlider: {fileID: 1225514412}
 --- !u!114 &1248466457
 MonoBehaviour:

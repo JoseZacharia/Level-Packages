@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
         //playerDirection = new Vector2(0, directionY).normalized;
 
         verticalInput = Input.GetAxis("Vertical");
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Time.timeScale!=0 && Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(sloMoEffect());
         }
