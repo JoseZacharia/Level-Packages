@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         //gameObject.layer = 8;
-        Time.timeScale = 1;
         rb = GetComponent<Rigidbody2D>();
     }
 
