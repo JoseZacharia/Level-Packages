@@ -15,6 +15,7 @@ TagManager:
   - Ammo
   - Border
   - Slo Mo
+  - Shield
   layers:
   - Default
   - TransparentFX
@@ -24,9 +25,9 @@ TagManager:
   - UI
   - Player
   - Enemy
-  - 
-  - 
-  - 
+  - Invincibility
+  - Obstacles
+  - Collectibles
   - 
   - 
   - 

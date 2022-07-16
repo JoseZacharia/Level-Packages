@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.layer = 8;
+        //gameObject.layer = 8;
         Time.timeScale = 1;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -26,6 +26,10 @@ public class Player : MonoBehaviour
         //playerDirection = new Vector2(0, directionY).normalized;
 
         verticalInput = Input.GetAxis("Vertical");
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(sloMoEffect());
+        }
     }
 
     private void FixedUpdate()

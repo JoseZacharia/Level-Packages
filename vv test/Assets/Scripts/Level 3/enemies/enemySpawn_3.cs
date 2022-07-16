@@ -45,31 +45,9 @@ public class enemySpawn_3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (enemiesSpawned >= totalEnemies)
-        //{
-        //    spawnRate = 0;
-            
-        //}
-
-        //if(enemiesKilled >= totalEnemies)
-        //{
-        //    enemyLeftCounterObject.SetActive(false);
-        //    enemiesStage = false;
-        //    bossEnemy.SetActive(true);
-        //}
-
-        // spawnRate += (1/ 1000) * Time.deltaTime;
-        //print(spawnRate);
 
         timeElapsed += Time.deltaTime;
-        //print(Mathf.RoundToInt(timeElapsed) % 4);
-        //print(timeElapsed);
-        //if (Mathf.RoundToInt(timeElapsed) % difficultyIncreaseRate == 0)
-        //{
-        //    spawnRate += 1/60;
-        //    print(spawnRate);
 
-        //}
         if (enemiesStage == true)
         {
             if (enemiesSpawned >= totalEnemies)
@@ -98,18 +76,6 @@ public class enemySpawn_3 : MonoBehaviour
                     Spawn();
                     spawnTime = Time.time + 1 / spawnRate;
                     currentNoOfEnemies++;
-                    //enemiesKilled++;
-                    // print(enemiesKilled);
-                    //if (enemiesKilled >= totalEnemies)
-                    //{
-                    //    spawnRate = 0;
-                    //    enemiesStage = false;
-                    //    enemyLeftCounterObject.SetActive(false);
-                    //    bossEnemy.SetActive(true);
-                    //}
-                    //Time.timeScale = 0;
-
-                    //spawnRate++;
                 }
 
             }
