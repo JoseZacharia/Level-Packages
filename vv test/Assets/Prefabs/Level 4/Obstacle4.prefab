@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1694402021032722562}
   - component: {fileID: 7511201954477603660}
   - component: {fileID: 2816806711783832662}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Obstacle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3125426925994453700}
   - component: {fileID: 864721534994091199}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Obstacle Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
