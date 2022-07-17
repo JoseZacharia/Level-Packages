@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class CameraMovt_1 : MonoBehaviour
 {
+    public float bottomLimit, topLimit, leftLimit, rightLimit;
+    public bool editMode;
+    public GameObject player;
 
     private float smoothtime = 0.5f;
     private Vector3 velocity = Vector3.zero, offset;
     bool faceleft;
-    public float bottomLimit, topLimit, leftLimit, rightLimit;
-
-    public GameObject player;
+   
     // Start is called before the first frame update
     void Start()
     {
         //to store distance between camera and player as specified in the Editor  
-        //offset = transform.position - player.transform.position;
+        if(editMode==false)
+            offset = transform.position - player.transform.position;
     }
 
     private void Update()

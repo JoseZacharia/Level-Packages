@@ -9,9 +9,7 @@ public class playerLoseLife_2 : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField] static int playerLives = 1;
-    public GameObject gameoverscreen;
-
-   
+    public GameObject gameoverscreen;   
 
     private void OnCollisionEnter2D(Collision2D collision)                                                  
     {
@@ -24,10 +22,10 @@ public class playerLoseLife_2 : MonoBehaviour
         playerLives--;                                                                                          //decrement pleyerLIves by 1
 
         if (playerLives <= 0)                                                                                   //if playerlives is 0 or less
-        {
-            //print("gameover");
-
+        {                                                                                                       //print("gameover");            
             Time.timeScale = 0;                                                                                 //stop gameplay 
+            FindObjectOfType<AudioManager>().StopPlaying("Theme");
+            FindObjectOfType<AudioManager>().Play("Game Over");
             gameoverscreen.SetActive(true);                                                                     // show game over screen                                                         
             playerLives = 1;
         }

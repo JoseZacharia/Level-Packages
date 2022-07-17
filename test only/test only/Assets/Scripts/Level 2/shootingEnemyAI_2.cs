@@ -38,13 +38,12 @@ public class shootingEnemyAI_2: MonoBehaviour
         if (Mathf.Abs(Vector2.Distance(transform.position, player.position)) < playerDetectDistance)            //if player is inside detection range
         {
             //transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.position.x, transform.position.y), (movtSpeed / 10) * Time.fixedDeltaTime); 
-
             if (shooting == false)                                                                              //if shooting = false
             {
+                
                 shooting = true;                                                                                //set shooting = true
                 InvokeRepeating("Shoot", 0f, 1 / fireRate);                                                     //invoke shoot function repeatedly at specified firerate
             }
-
         }
 
         else if (Mathf.Abs(Vector2.Distance(transform.position, player.position)) > playerDetectDistance)       //if player is outside detection range

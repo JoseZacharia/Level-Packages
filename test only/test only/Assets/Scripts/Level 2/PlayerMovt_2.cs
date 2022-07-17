@@ -31,6 +31,7 @@ public class PlayerMovt_2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FindObjectOfType<AudioManager>().Play("Theme");
         Time.timeScale = 1;                                                                             
         currentFuel = 0;                                                                            //currentFuel = 0
         normJump = jumpforce;                                                                       //set normalJump as initial jumpforce value
@@ -66,14 +67,21 @@ public class PlayerMovt_2 : MonoBehaviour
                                                                                                             //loss due to falling
         if (head.transform.position.y < GroundLimit.transform.position.y)                                   //if head of player < ground limit
         {
-            gameoverscreen.SetActive(true);                                                                 //Display game over screen
             Time.timeScale = 0;
+            FindObjectOfType<AudioManager>().StopPlaying("Theme");
+            FindObjectOfType<AudioManager>().Play("Game Over");
+            gameoverscreen.SetActive(true);                                                                 //Display game over screen
+
         }
                                                                                                             //win condition
         if (head.transform.position.x >= winPoint.transform.position.x && (currentFuel >= targetFuel))      //if player is at win point && player has required target fuel 
         {
+            FindObjectOfType<AudioManager>().StopPlaying("Theme");
+            FindObjectOfType<AudioManager>().Play("Level won");
+            
+            Time.timeScale=0;
             winScreen.SetActive(true);                                                                      //show level won screen
-            Time.timeScale = 0;
+            
         }
 
         fuelTracker.text = currentFuel.ToString("0") + "/" + targetFuel.ToString("0");    //display fuel percentage
@@ -102,6 +110,7 @@ public class PlayerMovt_2 : MonoBehaviour
         if (Physics2D.OverlapCircleAll(groundcheckTransform.position, 0.45f).Length == 2)
         {
             isGrounded = true;
+            
         }
 
         else if (Physics2D.OverlapCircleAll(groundcheckTransform.position, 0.45f).Length != 2)
@@ -110,14 +119,22 @@ public class PlayerMovt_2 : MonoBehaviour
             playerAnimator.SetTrigger("jump");
         }
 
-            if (jumpkeypressed && (Physics2D.OverlapCircleAll(groundcheckTransform.position, 0.45f).Length == 2) )      //if jump key is pressed and player is not grounded
+        if (jumpkeypressed && (Physics2D.OverlapCircleAll(groundcheckTransform.position, 0.45f).Length == 2) && boosting)               //if jump key is pressed and player is not grounded
+        {
+            FindObjectOfType<AudioManager>().Play("Jump with boots");
+            GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);                           //player is made to jump with velocit of jumpforce
+            jumpkeypressed = false;
+
+        }
+
+        if (jumpkeypressed && (Physics2D.OverlapCircleAll(groundcheckTransform.position, 0.45f).Length == 2) )               //if jump key is pressed and player is not grounded
         {
             
-                GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);                  //player is made to jump with velocit of jumpforce
+                GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);                           //player is made to jump with velocit of jumpforce
                 jumpkeypressed = false;
             
         }
-        GetComponent<Rigidbody2D>().velocity = new Vector2(horizontalinput*speed, GetComponent<Rigidbody2D>().velocity.y); //change horizontal velocity according to horizontal input 
+        GetComponent<Rigidbody2D>().velocity = new Vector2(horizontalinput*speed, GetComponent<Rigidbody2D>().velocity.y);   //change horizontal velocity according to horizontal input 
 
     }
 
@@ -125,18 +142,21 @@ public class PlayerMovt_2 : MonoBehaviour
     {
         if(collision.gameObject.tag == "O2 Tank")                                                  //if player collides with O2 tank
         {
+            FindObjectOfType<AudioManager>().Play("Picked up O2 Tank");
             statsTracker.GetComponent<Stats_2>().updateO2();                                       //call updatO2 function from Stats_2 to increase O2
             Destroy(collision.gameObject);                                                         //destroy the O2 gameobject 
         }
 
         if (collision.gameObject.tag == "Fuel Tank")                                               //if player collides with Fuel tank
         {
+            FindObjectOfType<AudioManager>().Play("Picked up Fuel Tank");
             currentFuel++;                                                                         //increment currentFuel by one
             Destroy(collision.gameObject);                                                         //destroy the Fuel tank gameobject 
         }
 
         if (collision.gameObject.tag == "Speed Boost")                                             //if player collides with Boots
         {
+            FindObjectOfType<AudioManager>().Play("Picked up boots");
             boosting = true;                                                                       //set boosting as true
             speed *= boostMultiplier;                                                              //speed = speed * boostMultiplier
             jumpforce *= boostMultiplier*0.85f;                                                    //jumpforce = jumpforce * boostMultiplier;

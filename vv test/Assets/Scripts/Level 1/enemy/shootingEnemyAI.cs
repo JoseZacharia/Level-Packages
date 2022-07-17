@@ -5,7 +5,7 @@ using UnityEngine;
 public class shootingEnemyAI : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject bulletPrefab;
+    public GameObject bulletPrefab, ammoPrefab;
     public Transform firePoint;
     public float playerDetectDistance, retreatDistance, fireRate, movtSpeed;
     public float maxHealth;
@@ -89,7 +89,11 @@ public class shootingEnemyAI : MonoBehaviour
             currentHealth--;
             healthBar.setHealth(currentHealth, maxHealth);
             if (currentHealth <= 0)
+            {
+                Instantiate(ammoPrefab, transform.position, transform.rotation);
                 Destroy(gameObject);
+            }
+                
         }
     }
 }

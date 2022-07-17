@@ -25,15 +25,22 @@ public class Stats_2 : MonoBehaviour
         o2slider.setpercent(currentPercentage);
         countdownText.text = "O2 Level : " + currentPercentage.ToString("0.00") + "%";                   //Display the O2 level in string format
 
-        if (currentPercentage <= 30f)                                                                    //if currentPercentage < 30 
+        if (currentPercentage <= 30f && currentPercentage >= 0)                                          //if currentPercentage < 30 
         {
+            FindObjectOfType<AudioManager>().Play("low oxygen");
             countdownText.color = Color.red;                                                             //change color of countdownText to red
+
         }
-        else countdownText.color = Color.white;                                                          //default color is white
-
-
-        if(currentPercentage <= 0)                                                                        //when currentPercentage is 0 or less
+        else if (currentPercentage > 30)
         {
+            FindObjectOfType<AudioManager>().StopPlaying("low oxygen");
+            countdownText.color = Color.white;                                                              //default color is white
+        }
+
+        else if(currentPercentage <= 0)                                                                        //when currentPercentage is 0 or less
+        {
+            FindObjectOfType<AudioManager>().StopPlaying("Theme");
+            FindObjectOfType<AudioManager>().Play("Game Over");
             gameoverscreen.SetActive(true);                                                               //display game over screen
             Time.timeScale = 0;                                                                 
             currentPercentage = 100;                                                                      //set currentPercentage as 100 again

@@ -124,10 +124,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6454220884329644591, guid: a376f178c4c829b4482e3e583e16daac, type: 3}
+  ammoPrefab: {fileID: 3343115493744897435, guid: cde04c2e4c97ea7439200e535503fcb3, type: 3}
   firePoint: {fileID: 2977466470461888342}
   playerDetectDistance: 30
   retreatDistance: 15
-  fireRate: 2
+  fireRate: 1
   movtSpeed: 15
   maxHealth: 5
 --- !u!114 &2977466470455553758
