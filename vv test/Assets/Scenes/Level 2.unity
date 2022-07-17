@@ -675,7 +675,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55692288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.4, y: 4.6, z: 0}
+  m_LocalPosition: {x: -0.5, y: -4.1, z: 0}
   m_LocalScale: {x: 2.4913638, y: 2.8953629, z: 1.1092193}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -797,8 +797,8 @@ MonoBehaviour:
   boostMultiplier: 2
   boostTimer: 2
   playerAnimator: {fileID: 55692298}
-  jumpforce: 13.7
-  speed: 28
+  jumpforce: 19
+  speed: 20
 --- !u!4 &60176337 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4061888766892515389, guid: 6d57e9d1ff055084e9d7c488c5d2e4e4, type: 3}
@@ -7697,7 +7697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 655, y: -53.17395}
+  m_AnchoredPosition: {x: 655, y: -53.174072}
   m_SizeDelta: {x: 221.6514, y: 103.3326}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1852062535
